@@ -1,0 +1,39 @@
+.navbar{
+    height: 135px;
+    width: 100%;
+    display: flex;
+    background-color: rgb(185, 165, 64);
+    justify-content: space-between;
+    align-content: flex-start;
+}
+.title{
+    position: relative;
+    width: max-content ;
+    left: 10%;
+    font-size: 40px;
+}
+.list{
+    padding-right: 80px;
+    display: flex;
+    align-items: flex-end;
+    gap: 50px;
+    list-style: none;
+    font-size: 15px;
+    
+    
+
+}
+.item:active {
+    transform: translate(0px , 2px);
+
+}
+.option{
+    
+    border-right-width: 0em;
+    text-decoration: none;
+    color: rgba(4, 7, 4, 0.71);
+}
+.option:hover{
+    color: rgb(0, 0, 0);
+    
+}

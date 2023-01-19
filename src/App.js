@@ -1,7 +1,11 @@
-import "./App.css";
+import Navegation from "./navegation/routes";
 
 function App() {
-  return <>TaskToDo</>;
+  return (
+    <div>
+      <Navegation />
+    </div>
+  );
 }
 
 export default App;
