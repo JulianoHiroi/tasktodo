@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
+import Logo from "../../assets/LogoTaskToDo.png";
+
 function Navbar() {
   return (
     <nav className={styles.navbar}>
-      <h1 className={styles.title}>TaskToDo</h1>
+      <img className={styles.logo} src={Logo} alt="Logo" />
       <ul className={styles.list}>
         <li className={styles.item}>
           <Link className={styles.option} to="/">

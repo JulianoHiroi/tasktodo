@@ -2,14 +2,16 @@
     height: 135px;
     width: 100%;
     display: flex;
-    background-color: rgb(185, 165, 64);
+    background-color: rgb(19, 14, 74);
     justify-content: space-between;
     align-content: flex-start;
 }
-.title{
+.logo{
     position: relative;
-    width: max-content ;
-    left: 10%;
+    width: 287px;
+    height: 80px;
+    left: 5%;
+    top: 20%;
     font-size: 40px;
 }
 .list{
@@ -31,9 +33,9 @@
     
     border-right-width: 0em;
     text-decoration: none;
-    color: rgba(4, 7, 4, 0.71);
+    color: rgba(235, 238, 235, 0.71);
 }
 .option:hover{
-    color: rgb(0, 0, 0);
+    color: rgb(139, 136, 136);
     
 }
