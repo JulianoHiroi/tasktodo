@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    width: fit-content;
+    max-width: 250px;
+    background-color: rgba(31, 31, 21, 0.301)
+}
+.lists{
+    display:flex;
+    flex-direction: column;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    min-width: 150px;
+    width: fit-content;
+    max-width: 250px;
+    min-height: inherit;
+    row-gap: 2px;
+}
+.button{
+    all: unset;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    height: 30px;
+    border-radius: 5px;
+    
+}
+.button:hover{
+    background-color: aqua;
+}
+.button:hover{
+    background-color: aqua;
+}

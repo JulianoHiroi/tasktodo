@@ -1,35 +1,22 @@
-import { useEffect, useState } from "react";
-
 import styles from "./styles.module.css";
 
-import ListBoard from "../../../components/ListBoard";
-import api from "../../../services/api";
-
-function Board() {
-  const [lists, setLists] = useState();
-  const getList = () => {
-    try {
-      api.get("list").then((res) => {
-        setLists(res.data);
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  useEffect(() => {
-    getList();
-  }, []);
+function Board({ tasks }) {
   return (
     <div className={styles.container}>
-      {lists && (
-        <ul className={styles.lists}>
-          {lists.map((list, key) => {
-            return <ListBoard key={key} list={list} />;
+      {tasks && (
+        <div className={styles.board}>
+          {tasks.map((task, key) => {
+            return (
+              <div key={key} className={styles.task}>
+                <p>
+                  {task.name} {task.degree}
+                </p>
+              </div>
+            );
           })}
-        </ul>
+        </div>
       )}
     </div>
   );
 }
-
 export default Board;
