@@ -1,4 +1,10 @@
+import Navbar from "../../layout/Navbar";
+
 function Home() {
-  return <>oi</>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 }
 export default Home;

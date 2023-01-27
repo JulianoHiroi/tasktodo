@@ -1,18 +1,16 @@
 .navbar{
-    height: 135px;
+    height: 8vh;
     width: 100%;
     display: flex;
     background-color: rgb(19, 14, 74);
     justify-content: space-between;
-    align-content: flex-start;
+    align-items: center;
 }
 .logo{
-    position: relative;
-    width: 287px;
-    height: 80px;
-    left: 5%;
-    top: 20%;
-    font-size: 40px;
+    width: 180px;
+    height: 90%;
+    padding-left: 20px;
+    display: flex;
 }
 .list{
     padding-right: 80px;
@@ -21,21 +19,15 @@
     gap: 50px;
     list-style: none;
     font-size: 15px;
-    
-    
-
 }
 .item:active {
     transform: translate(0px , 2px);
-
 }
 .option{
-    
     border-right-width: 0em;
     text-decoration: none;
     color: rgba(235, 238, 235, 0.71);
 }
 .option:hover{
     color: rgb(139, 136, 136);
-    
 }

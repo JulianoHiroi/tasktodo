@@ -13,7 +13,7 @@ function Navbar() {
           </Link>
         </li>
         <li className={styles.item}>
-          <Link className={styles.option} to="/mytasks">
+          <Link className={styles.option} to="/user">
             MyTasks
           </Link>
         </li>

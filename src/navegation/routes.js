@@ -1,16 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "../pages/Home";
-import MyTask from "../pages/MyTasks";
-import Navbar from "../layout/Navbar";
+import User from "../pages/User";
 
 function Navegation() {
   return (
     <Router>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/mytasks" element={<MyTask />} />
+        <Route path="/user" element={<User />} />
       </Routes>
     </Router>
   );
