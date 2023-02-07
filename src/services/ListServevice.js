@@ -7,7 +7,6 @@ class ListService {
       return response.data;
     } catch (err) {
       console.log(err);
-      return "";
     }
   }
   async getList(id) {
@@ -16,7 +15,22 @@ class ListService {
       return response.data;
     } catch (err) {
       console.log(err);
-      return "";
+    }
+  }
+  async postList(list) {
+    try {
+      const response = await api.post(`list/create`, list);
+      return response.data;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  async deleteList(id) {
+    try {
+      const response = await api.delete(`list/delete/${id}`);
+      return response.data;
+    } catch (err) {
+      console.log(err);
     }
   }
 }

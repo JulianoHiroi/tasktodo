@@ -1,0 +1,78 @@
+.container{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color: beige;
+   width: 95%;
+   height: 5rem;
+   border-radius: 5px;
+
+}
+.startup{
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation: startup;
+    animation-duration: 500ms;
+}
+.hidden{
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation: close;
+    animation-duration:500ms;
+}
+@keyframes close{
+    0% {opacity: 1;
+        height: 5rem;}
+    50%{opacity: 0;}
+    100%{opacity: 0;
+    height:0; }
+}
+@keyframes startup{
+    0% {opacity: 0;
+        height: 0px;}
+    50%{opacity: 0;}
+    100%{opacity: 1;
+    height: 5rem;}
+}
+.content{
+    margin: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+.input{
+    height: 20px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: rgb(128, 124, 124);
+}
+.buttons{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 1.8rem;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 5px;
+}
+.iconDelete{
+    position: absolute;
+    right: 3rem;
+    width: 25px;
+    height: 25px;
+    color: red;
+}
+.iconDelete:hover{
+    width: 30px;
+    height: 30px;
+}
+.iconCreate{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    margin-right: 0.5rem ;
+    color: green;
+}
+.iconCreate:hover{
+    width: 30px;
+    height: 30px;
+}

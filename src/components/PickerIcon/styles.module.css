@@ -1,0 +1,59 @@
+.container{
+    position:relative;
+    
+}
+.container:hover{
+    box-shadow: 0 2px 8px 1px rgb(64 60 67 / 24%);
+}
+.content{
+    z-index: 1;
+    position: absolute;
+    width: fit-content;
+    left: -5px;
+    top: 10px;
+    height: 110px;
+    overflow-y: auto;
+    border-radius: 5px;
+    background-color: beige;
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+    padding-top: 3px;
+    display: grid;
+    place-items: center;
+    grid: repeat(3, 35px) / auto-flow 45px;
+
+}
+.container::-webkit-scrollbar {
+    width: 5px;               /* width of the entire scrollbar */
+  }
+.container::-webkit-scrollbar-track {
+    background: rgba(16, 15, 15, 0);        /* color of the tracking area */
+  }
+.container::-webkit-scrollbar-thumb {
+    background-color: rgb(131, 131, 134);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px hidden rgba(0, 0, 0, 0);  /* creates padding around scroll thumb */
+}
+
+.button{
+    all:initial;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgba(0, 226, 226, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+.icon{
+    width: 25px;
+    height: 25px;
+    padding:3px ;
+}
+.icon:hover{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+
+}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import styles from "./styles.module.css";
 
@@ -6,22 +6,13 @@ import ListServevice from "../../services/ListServevice";
 
 import Navbar from "../../layout/Navbar";
 import Menu from "./Menu";
-import Board from "./Board";
 
 function User() {
-  const [lists, setLists] = useState();
-  const [list, setList] = useState();
+  const [list, setList] = useState(null);
+  const [showMenu, setShowMenu] = useState(true)
+  const [loading, setLoading] = useState(true)
 
-  const getlists = async () => {
-    await ListServevice.getAllLists()
-      .then((res) => {
-        setLists(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-  const getlist = async (id) => {
+  const getList = async (id) => {
     await ListServevice.getList(id)
       .then((res) => {
         setList(res);
@@ -30,20 +21,38 @@ function User() {
         console.log(err);
       });
   };
-
-  useEffect(() => {
-    getlists();
-  }, []);
-
+  const verifyLoading = () => {
+    setLoading(false)
+  }
+  const handleButtonMenu = () => {
+    setShowMenu(!showMenu)
+  }
   const handleOptionMenu = async (id) => {
-    getlist(id);
+    getList(id);
   };
   return (
     <div className={styles.container}>
-      <Navbar />
+      <Navbar handleButtonMenu={handleButtonMenu} />
       <div className={styles.body}>
-        <Menu lists={lists} handleOptionMenu={handleOptionMenu} />
-        {list && <Board tasks={list.tasks} />}
+        {loading && <div className={styles.containerLoading}>
+          <div className={styles.loading}><span className={styles.loader}></span></div>
+        </div>}
+        <Menu handleOptionMenu={handleOptionMenu} verifyLoading={verifyLoading} className={styles.menu} showMenu={showMenu} />
+        <div className={styles.board}>
+          {!list ? <div>Seja bem vindo!!</div> : (
+            <div >
+              {list.task ? list.tasks.map((task, key) => {
+                return (
+                  <div key={key} className={styles.task}>
+                    <p>
+                      {task.name} {task.degree}
+                    </p>
+                  </div>
+                );
+              }) : <h1>Oi</h1>}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

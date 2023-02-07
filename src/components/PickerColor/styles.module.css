@@ -1,0 +1,80 @@
+.container{
+    position: relative;
+    
+}
+.buttonColor{
+    all:initial;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+}
+
+.pickerColor{
+    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+    position: absolute;
+    z-index: 100;
+    top: -100px;
+    left: 30px;
+    display: grid;
+    width: 17rem;
+    grid: repeat(3, 35px) / auto-flow 45px;
+    place-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    animation-name: slice;
+    animation-duration: 1s; 
+    z-index: 1;
+    background-color: rgb(238, 235, 231);
+    
+}
+.pickerColor:hover{
+    box-shadow: 0 2px 8px 1px rgb(64 60 67 / 24%);
+}
+@keyframes slice {
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    
+}
+.circle_1,.circle_2,.circle_3,.circle_4,.circle_5,.circle_6,.circle_7,.circle_8,.circle_9,.circle_10,.circle_11,.circle_12,.circle_13,.circle_14,.circle_15,.circle_16,.circle_17,.circle_18{
+    all:initial;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+.circle_1{background-color: #f44336;}
+.circle_2{background-color: #03a9f4;}
+.circle_3{background-color: #ffeb3b;}
+.circle_4{background-color: #e91e63;}
+.circle_5{background-color: #00bcd4;}
+.circle_6{background-color: #ffc107;}
+.circle_7{background-color: #9c27b0; }
+.circle_8{background-color: #009688;}
+.circle_9{background-color: #ff9800 ;}
+.circle_10{background-color: #673ab7;}
+.circle_11{background-color: #4caf50;}
+.circle_12{background-color: #ff5722;}
+.circle_13{background-color: #3f51b5;}
+.circle_14{background-color: #8bc34a;}
+.circle_15{background-color: #795548;}
+.circle_16{background-color: #2196f3;}
+.circle_17{background-color: #cddc39;}
+
+
+.circle_1:checked,.circle_2:checked,.circle_3:checked,.circle_4:checked,.circle_5:checked,.circle_6:checked,.circle_7:checked,.circle_8:checked,.circle_9:checked,.circle_10:checked,.circle_11:checked,.circle_12:checked,.circle_13:checked,.circle_14:checked,.circle_15:checked,.circle_16:checked,.circle_17:checked,.circle_18:checked{
+    border-style: solid;
+    border-color: rgb(109, 107, 107);
+    border-width: 0.2rem;
+}
+.circle_1:hover,.circle_2:hover,.circle_3:hover,.circle_4:hover,.circle_5:hover,.circle_6:hover,.circle_7:hover,.circle_8:hover,.circle_9:hover,.circle_10:hover,.circle_11:hover,.circle_12:hover,.circle_13:hover,.circle_14:hover,.circle_15:hover,.circle_16:hover,.circle_17:hover,.circle_18:hover{
+    width: 30px;
+    height: 30px;
+}
