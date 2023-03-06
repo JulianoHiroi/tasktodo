@@ -16,7 +16,6 @@
 .pickerColor{
     box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
     position: absolute;
-    z-index: 100;
     top: -100px;
     left: 30px;
     display: grid;
@@ -27,7 +26,7 @@
     border-radius: 5px;
     animation-name: slice;
     animation-duration: 1s; 
-    z-index: 1;
+    z-index: 100;
     background-color: rgb(238, 235, 231);
     
 }

@@ -1,5 +1,4 @@
 import api from "./api";
-
 class ListService {
   async getAllLists() {
     try {
@@ -17,6 +16,15 @@ class ListService {
       console.log(err);
     }
   }
+  async updateList(id, list) {
+    try {
+      const response = await api.patch(`list/update/${id}`, list);
+      return response.data;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   async postList(list) {
     try {
       const response = await api.post(`list/create`, list);

@@ -4,27 +4,7 @@
     display: flex;
     height: 92vh;
 }
-.board{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    width: 100%;
-}
-.task{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: aqua;
-    width: 100px;
-    height: 100px;
-    border-radius: 5px;
-    border-color: black;
-    border-style: solid;
-    border-width: 2px;
-    
-}
+
 .containerLoading{
     position: relative;
 

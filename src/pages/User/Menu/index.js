@@ -1,38 +1,31 @@
 import CreateButton from "../../../components/CreateButton";
 import BoxCreateList from "../../../components/BoxCreateList";
-import listService from "../../../services/ListServevice";
+import listService from "../../../services/ListService";
 
-import { HiTrash } from "react-icons/hi"
-
+import { HiTrash, HiMenu } from "react-icons/hi"
 import styles from "./styles.module.css";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import TypeIcon from "../../../components/TypeIcon";
 
-function Menu({ handleOptionMenu, verifyLoading, showMenu }) {
+function Menu({ handleOptionMenu, verifyLoading, verifyListSelect, lists, getLists, selectSearchItem }) {
   const [showBoxCreate, setShowBoxCreate] = useState(false);
   const [itemChecked, setItemChecked] = useState("");
-  const [lists, setLists] = useState();
   const [closeItem, setCloseItem] = useState("")
+  const [showMenu, setShowMenu] = useState(true)
   const [startUpItem, setStartUpItem] = useState(null)
 
-  const getLists = async () => {
-    await listService
-      .getAllLists()
-      .then((res) => {
-        setLists(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    verifyLoading()
-  };
+
+  const handleButtonMenu = () => {
+    setShowBoxCreate(false)
+    setShowMenu(!showMenu)
+  }
   const handleOnClickItems = (id) => {
     handleOptionMenu(id)
     setItemChecked(id)
   }
   const handleOnClickDelete = async (id) => {
-    await listService.deleteList(id).then(() => { }).catch((err) => { console.log(err) })
+    await listService.deleteList(id).then(() => { verifyListSelect(id) }).catch((err) => { console.log(err) })
     setCloseItem(id)
     getLists();
   }
@@ -57,23 +50,29 @@ function Menu({ handleOptionMenu, verifyLoading, showMenu }) {
       setStartUpItem(null)
     }, 500);
   };
-
   useEffect(() => {
-    getLists();
-  }, []);
+    if (selectSearchItem) {
+      handleOptionMenu(selectSearchItem)
+      setItemChecked(selectSearchItem)
+    }
+
+  }, [selectSearchItem])
 
   return (
     <div className={showMenu ? styles.container : styles.container2}>
-      <h2 className={styles.title}>Lista de Tarefas</h2>
+      <div className={styles.cabeçario}><button className={styles.buttonMenu} onClick={handleButtonMenu}><HiMenu size={"25px"} color={"white"} /></button><h2 className={styles.title}>Lista de Tarefas</h2></div>
+
       <hr className={styles.line} />
-      <CreateButton msg="Criar Lista" handleOnClick={handleCreateList} />
+      <div className={showMenu ? styles.centalizer : styles.hidden}><CreateButton msg="Criar Lista" handleOnClick={handleCreateList} /></div>
       <hr className={styles.line} />
-      {showBoxCreate && (
-        <BoxCreateList
-          handleCreateListOff={handleCreateListOff}
-          handlePostList={handlePostList}
-        />
-      )}
+      <div className={styles.centalizer}>
+        {showBoxCreate && (
+          <BoxCreateList
+            handleCreateListOff={handleCreateListOff}
+            handlePostList={handlePostList}
+          />
+        )}
+      </div>
       <div className={styles.options}>
         {lists && (
           <div className={styles.lists}>
@@ -82,13 +81,13 @@ function Menu({ handleOptionMenu, verifyLoading, showMenu }) {
                 <div
                   key={key}
                   onClick={() => handleOnClickItems(list.id)}
-                  className={`${closeItem === list.id && styles.hiddenItems} ${startUpItem === list.name && styles.startupItems} ${styles.items}`}
+                  className={`${closeItem === list.id && styles.hiddenItems} ${startUpItem === list.name && styles.startupItems} ${showMenu ? styles.items : styles.itemsRetratc}`}
                   style={itemChecked === list.id ? {
                     borderColor: list.color,
                     boxShadow: "0 0 40px 40px rgb(55, 55, 55) inset"
                   } : { borderColor: list.color }}
                 >
-                  <TypeIcon size="25px" selectIcon={list.type} />
+                  <div className={styles.iconType}><TypeIcon size="25px" selectIcon={list.type} /></div>
                   <p className={styles.nameList} >{list.name}</p>
                   <HiTrash size="20px" className={styles.iconTrash} onClick={() => handleOnClickDelete(list.id)} />
                 </div>

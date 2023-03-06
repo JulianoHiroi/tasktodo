@@ -1,0 +1,43 @@
+.container{
+    width: 33%;
+    height: 100%;
+}
+.text{
+    height: 15px;
+margin: 0px 0px 5px 8%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: rgb(21, 18, 17);
+}
+
+.tasks{
+    margin: auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    width: 92%;
+    height: calc(100% - 30px);
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px 2px rgb(64 60 67 / 16%);
+    display:  grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    grid-gap: 10px;
+    grid-auto-rows: 75px;
+    justify-content: stretch;
+    align-items: start;
+    overflow-y: scroll;
+}
+.tasks::-webkit-scrollbar {
+    width: 3px;               /* width of the entire scrollbar */
+}
+.tasks::-webkit-scrollbar-track {
+    background: rgba(16, 15, 15, 0);        /* color of the tracking area */
+}
+.tasks::-webkit-scrollbar-thumb {
+    background-color: rgb(131, 131, 134, 0.5);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px hidden rgba(0, 0, 0, 0);  /* creates padding around scroll thumb */
+}
+.tasks:hover{
+    box-shadow: 0px 4px 20px 2px rgb(64 60 67 / 24%);
+}

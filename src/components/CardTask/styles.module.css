@@ -1,0 +1,87 @@
+.container{
+    display: flex;
+    background-color: rgb(228, 221, 221);
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 5px;
+    border-color: rgb(151, 151, 151);
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.iconTrash,
+.iconEdit{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    color: rgba(99, 99, 99, 0.863);
+}
+.iconTrash{
+    right: 5px;
+    top: 7px;
+}
+.iconTrash:hover{
+    cursor: pointer;
+    color: black ;
+}
+.iconEdit{
+    right: 30px;
+    top: 7px;
+}
+.iconEdit:hover{
+    color: black;
+    cursor: pointer;
+}
+.iconDegree{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 5px;
+    bottom: 10px;
+}
+.contentInformation{
+    width: 75%;
+    max-width: 75%;
+    margin-left: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.contentInformation::-webkit-scrollbar {
+    width: 0px;               /* width of the entire scrollbar */
+  }
+.changeText{
+    animation: changeText;
+    animation-duration: 500ms;
+}
+
+@keyframes changeText {
+    0%{ opacity: 1; }
+    15%{opacity: 0;}
+    50%{ opacity: 0; transform: translateY(50%);}
+    75%{opacity: 0;}
+    100%{ opacity: 1;transform: translateY(0%);}
+} 
+.name{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+    width:  90%;
+    overflow-y: none;
+    
+}
+.description{
+    margin-top: 6px;
+    height: 85%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    text-align: justify;
+    font-weight: bold;
+    color: rgb(32, 30, 30);
+    max-width: 100%;
+    text-overflow: inherit;
+    overflow-y: auto;
+    
+}
+.description::-webkit-scrollbar {
+    width: 0px;               /* width of the entire scrollbar */
+}
